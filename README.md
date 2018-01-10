@@ -36,6 +36,31 @@ Use username and password: azkaban
 
 ![Azkaban Scheduler on Mac in Browser](azkabanscheduler.png)
 
+# 4. See Kubernetes status related to Azkaban (your output might be different)
+
+```
+$ kubectl get stacks
+NAME      AGE
+azkaban   1m
+```
+
+```
+$ kubectl get services
+NAME         TYPE           CLUSTER-IP       EXTERNAL-IP   PORT(S)           AGE
+azkexec      LoadBalancer   10.104.255.224   <pending>     12321:31580/TCP   1m
+azkweb       LoadBalancer   10.103.164.110   <pending>     8081:32019/TCP    1m
+kubernetes   ClusterIP      10.96.0.1        <none>        443/TCP           1d
+mysql        LoadBalancer   10.97.203.183    <pending>     3306:30034/TCP    1m
+```
+
+```
+$ kubectl get pods
+NAME                       READY     STATUS    RESTARTS   AGE
+azkexec-54b45859c4-k8cwd   1/1       Running   0          1m
+azkweb-6fdb78f977-l467h    1/1       Running   0          1m
+mysql-67445f897f-w4zb8     1/1       Running   0          1m
+```
+
 # Appendix - Learn more about Kubernetes (for OSX on Mac)
 
 1. https://blog.alexellis.io/docker-for-mac-with-kubernetes/
