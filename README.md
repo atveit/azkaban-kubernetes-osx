@@ -25,7 +25,9 @@ Stack azkaban is stable and running
 # 3. Open browser on http://localhost:8081
 Use username and password: azkaban
 
+## 3.1 Should get something like this in the browser
+
 ![Azkaban Scheduler on Mac in Browser](azkabanscheduler.png)
 
-## 3.1 Should get something like this in the browser
+
 
