@@ -100,6 +100,38 @@ Database changed
 mysql> show tables;
 ```
 
+# 6. Complementary Kubernetes Tools - Kubeapps / Helm - for installing apps
+
+## 6.1 Install kubeapps
+```
+$ sudo curl -L https://github.com/kubeapps/installer/releases/download/v0.2.0/kubeapps-darwin-amd64 -o /usr/local/bin/kubeapps && sudo chmod +x /usr/local/bin/kubeapps
+```
+
+## 6.2 Start kubeapps 
+```
+$ kubeapps up
+kubeapps up
+INFO[0000] Updating namespaces kubeapps                 
+INFO[0000]  Creating non-existent namespaces kubeapps   
+INFO[0000] Updating namespaces kubeless                 
+INFO[0000]  Creating non-existent namespaces kubeless   
+INFO[0000] Updating configmaps kubeapps.tcp-services    
+... # LOT OF OUTPUT OMITTED
+INFO[0008]  Creating non-existent secrets kubeapps.mongodb 
+INFO[0008] Updating statefulsets kubeless.zoo           
+INFO[0008]  Creating non-existent statefulsets kubeless.zoo 
+INFO[0008] Updating statefulsets kubeless.kafka         
+INFO[0008]  Creating non-existent statefulsets kubeless.kafka 
+```
+## 6.3 Start kubeapps dashboard
+```
+$ kubeapps dashboard
+Forwarding from 127.0.0.1:52680 -> 80
+```
+
+## 6.4 Open kubeapps ui in browser - http://localhost:52680/kubeless/
+![Kubeapps in Browser](kubeapps.png)
+
 # Appendix - Learn more about Kubernetes (for OSX on Mac)
 
 1. https://blog.alexellis.io/docker-for-mac-with-kubernetes/
