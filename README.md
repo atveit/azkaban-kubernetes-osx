@@ -61,6 +61,45 @@ azkweb-6fdb78f977-l467h    1/1       Running   0          1m
 mysql-67445f897f-w4zb8     1/1       Running   0          1m
 ```
 
+# 5. Login to a kubernetes pod - mysql
+(see mysql name from kubectl get pods above, and use 'password' as mysql password, ref docker-compose.yml file)
+```
+$ kubectl exec -it mysql-67445f897f-w4zb8 -- /bin/bash
+root@mysql-67445f897f-w4zb8:/#
+root@mysql-67445f897f-w4zb8:/# mysql -p
+Enter password:  
+elcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 23
+Server version: 5.7.20 MySQL Community Server (GPL)
+
+Copyright (c) 2000, 2017, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| azkaban            |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.01 sec)
+
+mysql> use azkaban;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> show tables;
+```
+
 # Appendix - Learn more about Kubernetes (for OSX on Mac)
 
 1. https://blog.alexellis.io/docker-for-mac-with-kubernetes/
