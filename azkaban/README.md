@@ -38,3 +38,10 @@ INFO Kubernetes file "mysql-deployment.yaml" created
 ```
 $ kubectl create -f azkexec-deployment.yaml,azkweb-deployment.yaml,mysql-deployment.yaml
 ```
+
+## 2.3 Deploy docker compose file with kompose to Kubernetes with HELM
+ref: https://github.com/kubernetes/kompose/blob/master/docs/user-guide.md
+```
+$ kompose convert -c 
+..
+INFO chart created in "./docker-compose/"
