@@ -135,5 +135,6 @@ Forwarding from 127.0.0.1:52680 -> 80
 # Appendix - Learn more about Kubernetes (for OSX on Mac)
 
 1. https://blog.alexellis.io/docker-for-mac-with-kubernetes/
+2. https://kubernetes.io/docs/tools/kompose/user-guide/
 
 
