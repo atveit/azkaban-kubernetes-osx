@@ -1,6 +1,8 @@
 # azkaban-kubernetes-osx
 Run Azkaban Scheduler on Kubernetes for OSX
 
+More about Azkaban Scheduler: https://azkaban.github.io/ (frequently used together with Hadoop)
+
 # 1. Prerequisites: 
 1. Install Docker for Mac (new version that has Kubernetes)
 2. Enable Kubernetes in Docker UI
