@@ -9,6 +9,11 @@ More about Azkaban Scheduler: https://azkaban.github.io/ (frequently used togeth
 
 ![Kubernetes Preferences in Docker for MAC](dockermackubernetespreferences.png)
 
+3. Set kubernetes context (in Terminal)
+```
+kubectl config use-context docker-for-desktop  
+```
+
 # 2. Install Azkaban scheduler (from Terminal)
 ```
 $ docker stack deploy azkaban -c azkaban/docker-compose.yml
@@ -31,5 +36,8 @@ Use username and password: azkaban
 
 ![Azkaban Scheduler on Mac in Browser](azkabanscheduler.png)
 
+# Appendix - Learn more about Kubernetes (for OSX on Mac)
+
+1. https://blog.alexellis.io/docker-for-mac-with-kubernetes/
 
 
