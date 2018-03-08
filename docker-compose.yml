@@ -1,0 +1,32 @@
+version: '3'
+services:
+  mysql:
+    hostname: mysql
+    image: mariadb:10
+    restart: always
+    ports:
+        - "3306:3306"
+    environment:
+        - MYSQL_USER=azkaban
+        - MYSQL_PASSWORD=azkaban
+        - MYSQL_DATABASE=azkaban
+        - MYSQL_ROOT_PASSWORD=wootwoot
+
+  azkexec:
+    hostname: azkexec
+    build: ./azkaban-execserver/
+    restart: always
+    environment:
+      - MYSQL_HOST=mysql
+    ports:
+      - "12321:12321"
+
+  azkweb:
+      hostname: azkweb
+      build: ./azkaban-webserver/
+      restart: always
+      environment:
+        - MYSQL_HOST=mysql
+        - MYSQL_ROOT_PASSWORD=wootwoot
+      ports:
+        - "8081:8081"
